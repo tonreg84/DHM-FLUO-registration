@@ -89,10 +89,8 @@ class ImagePixelPositionApp:
             return
         
         abc = min(len(self.img_positions),len(self.ref_positions))
-        print(abc)
         
         bcd = get_even_or_lower_even(abc)
-        print(bcd)
         
         mean_ratio = 0
         k=0
@@ -113,13 +111,13 @@ class ImagePixelPositionApp:
                 
                 ratio = ref_dist/img_dist
                 
-                print(i,ref_dist,img_dist,ratio)
+                print("Pair of landmarks #",int(i/2)," Distance in reference:",ref_dist,"Distance in source:",img_dist,"Ratio:",ratio)
                 
                 k=k+1
                 mean_ratio = mean_ratio + ratio
                 
         mean_ratio = mean_ratio/k
-        print("Mean ratio", mean_ratio)
+        print("Mean ratio:", mean_ratio)
         messagebox.showinfo("Mean ratio", mean_ratio)
         
         # # Euclidean distances between each consecutive pair of saved positions
